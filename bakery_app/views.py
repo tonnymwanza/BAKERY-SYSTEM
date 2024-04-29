@@ -11,6 +11,7 @@ from django.views import View
 from . forms import ContactForm
 from . models import Contact
 from . models import Products
+from . models import Order
 # Create your views here.
 
 class HomeView(View):
@@ -21,20 +22,7 @@ class HomeView(View):
             'subscriber_': subscriber_
         }
         return render(request, 'home.html', context)
-    
-@login_required(login_url='login')
-def subscribe_func(request, pk):
-    user = User.objects.get(id=pk)
-    sub = Subscribing.objects.get(id=pk)
-    
-    if request.user != user.sub:
-        subscribe = Subscribing.objects.create(
-            user = request.user
-        )
-    context = {
-        'subscribe': subscribe
-    }
-    return redirect('home')
+
     
 class AboutView(View):
     
@@ -54,7 +42,6 @@ class ProductView(View):
             'products': products
         }
         return render(request, 'product.html', context)
-    
     
 class ContactView(View):
 
@@ -120,3 +107,16 @@ def login(request):
             return redirect('login')
     return render(request, 'login.html')
 
+def order(request, pk):
+    products = Products.objects.get(id=pk)
+    order = Order.objects.create(products=products)
+    context = {
+        'products': products,
+        'order': order
+    }
+    return redirect('order_success')
+
+class OrderViewSuccess(View):
+
+    def get(self, request):
+        return render(request, 'order_success.html')

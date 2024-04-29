@@ -8,6 +8,7 @@ from . views import AboutView
 from . views import ProductView
 from . views import ContactView
 from . views import ServiceView
+from . views import OrderViewSuccess
 # your urls 
 
 urlpatterns = [
@@ -18,7 +19,8 @@ urlpatterns = [
     path('service', ServiceView.as_view(), name='service'),
     path('register', views.register, name='register'),
     path('login', views.login, name='login'),
-    path('subscribe_func/<int:pk>/', views.subscribe_func, name='subscribe_func'),
+    path('order/<int:pk>/', views.order, name='order'),
+    path('order_success', OrderViewSuccess.as_view(), name='order_success'),
 ]
 
 

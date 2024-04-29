@@ -18,3 +18,9 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
     image = models.ImageField(null=True)
+
+class Order(models.Model):
+    products = models.ForeignKey(Products, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.products.name

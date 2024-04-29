@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from . models import Contact
 from . models import Subscribing
+from . models import Order
 from . models import Products
 # Register your models here.
 
@@ -24,3 +25,5 @@ class AdminProduct(admin.ModelAdmin):
         'description',
         'image'
     ]
+
+admin.site.register(Order)
