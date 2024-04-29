@@ -4,16 +4,37 @@ from django.contrib.auth import authenticate
 from django.contrib import auth
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
+from . models import Subscribing
 from django.views import View
 from . forms import ContactForm
 from . models import Contact
+from . models import Products
 # Create your views here.
 
 class HomeView(View):
     
     def get(self, request):
-        return render(request, 'home.html')
+        subscriber_ = Subscribing.objects.count()
+        context = {
+            'subscriber_': subscriber_
+        }
+        return render(request, 'home.html', context)
+    
+@login_required(login_url='login')
+def subscribe_func(request, pk):
+    user = User.objects.get(id=pk)
+    sub = Subscribing.objects.get(id=pk)
+    
+    if request.user != user.sub:
+        subscribe = Subscribing.objects.create(
+            user = request.user
+        )
+    context = {
+        'subscribe': subscribe
+    }
+    return redirect('home')
     
 class AboutView(View):
     
@@ -28,7 +49,12 @@ class ServiceView(View):
 class ProductView(View):
 
     def get(self, request):
-        return render(request, 'product.html')
+        products = Products.objects.all()
+        context = {
+            'products': products
+        }
+        return render(request, 'product.html', context)
+    
     
 class ContactView(View):
 
@@ -55,7 +81,7 @@ class ContactView(View):
         context = {
             'form': 'form'
         }
-        return render(request, 'contact.html', context)
+        return redirect('contact')
     
 def register(request):
     if request.method == 'POST':
