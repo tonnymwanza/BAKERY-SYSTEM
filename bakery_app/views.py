@@ -90,7 +90,7 @@ def register(request):
             return redirect('register')
     return render(request, 'register.html')
 
-def login(request):
+def login(request): #login function
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -99,14 +99,15 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             if 'next' in request.POST:
-                return redirect(request.POST[next])
-            else:
+                return redirect(request.POST['next'])
+            else: 
                 return redirect('home')
         else:
             messages.error(request, 'invalid username or password')
             return redirect('login')
     return render(request, 'login.html')
 
+@login_required(login_url='login')
 def order(request, pk):
     products = Products.objects.get(id=pk)
     order = Order.objects.create(products=products)

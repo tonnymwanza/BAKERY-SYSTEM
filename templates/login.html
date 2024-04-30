@@ -37,6 +37,9 @@
 	            	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
 	              <input type="password" name="password" class="form-control" placeholder="Password" required>
 	            </div>
+				{% if request.GET.next %}
+				<input type="hidden" name="next" value="{{request.GET.next}}">
+				{% endif %}
 				{% for message in messages %}
 				<span style="color: red;">{{message}}</span>
 				{% endfor %}
