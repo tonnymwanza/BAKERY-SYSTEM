@@ -107,7 +107,6 @@ def login(request): #login function
             return redirect('login')
     return render(request, 'login.html')
 
-@login_required(login_url='login')
 def order(request, pk):
     products = Products.objects.get(id=pk)
     order = Order.objects.create(products=products)

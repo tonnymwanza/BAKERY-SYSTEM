@@ -59,7 +59,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="text-primary m-0">Bakery</h1>
+            <h1 class="text-primary m-0">Bakery Management System</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -71,6 +71,7 @@
                 <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
                 <a href="{% url 'product' %}" class="nav-item nav-link">Products</a>
                 <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
             </div>
             <div class=" d-none d-lg-flex">
                 </div>
@@ -174,7 +175,7 @@
                     <div class="h-100">
                         <p class="text-primary text-uppercase mb-2">// About Us</p>
                         <h1 class="display-6 mb-4">We Bake Every Item From The Core Of Our Hearts</h1>
-                        <p>Welcom to your go-to destination for freshly baked goods and delightful treats. We believe in quality and test above all else.</p>
+                        <p>Welcome to your go-to destination for freshly baked goods and delightful treats. We believe in quality and test above all else.</p>
                         <p>Our talented bakers use only the finest ingredients to create only each item on our menu.</p>
                         <div class="row g-2 mb-4">
                             <div class="col-sm-6">
@@ -276,7 +277,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="text-primary text-uppercase mb-2">// Our Services</p>
                     <h1 class="display-6 mb-4">What Do We Offer For You?</h1>
-                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-5">We take pride in offering a delectable range of freshly baked goods and services tailored to satisfy your cravings and make your occasions special. Explore our offerings below.</p>
                     <div class="row gy-5 gx-4">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex align-items-center mb-3">
@@ -285,7 +286,7 @@
                                 </div>
                                 <h5 class="mb-0">Quality Products</h5>
                             </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+                            <span>Indulge in our bakery's quality products crafted with the finest ingredients and artisanal techniques, ensuring every bite is a dilightful experience.</span>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                             <div class="d-flex align-items-center mb-3">
@@ -294,7 +295,7 @@
                                 </div>
                                 <h5 class="mb-0">Custom Products</h5>
                             </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+                            <span>We specialize in crafting custom baked goods tailored to your preference.</span>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                             <div class="d-flex align-items-center mb-3">
@@ -303,7 +304,7 @@
                                 </div>
                                 <h5 class="mb-0">Online Order</h5>
                             </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+                            <span>Your can make an order by visiting the products page and selecting the product of your choice.</span>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                             <div class="d-flex align-items-center mb-3">
@@ -312,7 +313,7 @@
                                 </div>
                                 <h5 class="mb-0">Home Delivery</h5>
                             </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
+                            <span>We make orders available to our clients anywhere, anytime.</span>
                         </div>
                     </div>
                 </div>
@@ -345,13 +346,9 @@
                         <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
                         <div class="team-text">
                             <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
+                                <h5>Executive Chef</h5>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -361,13 +358,9 @@
                         <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
                         <div class="team-text">
                             <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
+                                <h5>Senior Chef</h5>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -377,13 +370,9 @@
                         <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
                         <div class="team-text">
                             <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
+                                <h5>Pastry Chef</h5>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -393,13 +382,9 @@
                         <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
                         <div class="team-text">
                             <div class="team-title">
-                                <h5>Full Name</h5>
-                                <span>Designation</span>
+                                <h5>Sauce Chef</h5>
                             </div>
                             <div class="team-social">
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-light rounded-circle" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -426,7 +411,7 @@
                             <span>Profession</span>
                         </div>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">Using the bakery's online system has been a game-changer for me. I can easily browse through their delicious offerings, customize my order and place it within minutes.</p>
                 </div>
                 <div class="testimonial-item bg-white rounded p-4">
                     <div class="d-flex align-items-center mb-4">
@@ -436,17 +421,7 @@
                             <span>Profession</span>
                         </div>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white rounded p-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <img class="flex-shrink-0 rounded-circle border p-1" src="{% static 'img/testimonial-3.jpg' %}" alt="">
-                        <div class="ms-4">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">I'm a regular customer of this bakery, and their new system has made my experience even better.I love that i can pre-order my favorite pastries and cakes online and they are always freshly baked.</p>
                 </div>
                 <div class="testimonial-item bg-white rounded p-4">
                     <div class="d-flex align-items-center mb-4">
@@ -456,7 +431,7 @@
                             <span>Profession</span>
                         </div>
                     </div>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">The quality and taste are consistently amazing. This system definately made me a loyal customer. It's a great way to feel appreciated as a customer and keep coming back for more delicious treats.</p>
                 </div>
             </div>   
         </div>
